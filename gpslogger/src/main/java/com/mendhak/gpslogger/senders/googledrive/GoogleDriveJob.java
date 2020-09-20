@@ -20,8 +20,9 @@
 package com.mendhak.gpslogger.senders.googledrive;
 
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.birbit.android.jobqueue.Job;
 import com.birbit.android.jobqueue.Params;
@@ -31,7 +32,7 @@ import com.mendhak.gpslogger.common.Strings;
 import com.mendhak.gpslogger.common.events.UploadEvents;
 import com.mendhak.gpslogger.common.slf4j.Logs;
 import com.mendhak.gpslogger.loggers.Streams;
-import de.greenrobot.event.EventBus;
+
 import org.json.JSONObject;
 import org.slf4j.Logger;
 
@@ -41,6 +42,8 @@ import java.io.FileInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+
+import de.greenrobot.event.EventBus;
 
 public class GoogleDriveJob extends Job {
     private static final Logger LOG = Logs.of(GoogleDriveJob.class);

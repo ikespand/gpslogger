@@ -1,21 +1,31 @@
 package com.mendhak.gpslogger.senders.sftp;
 
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Base64;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.birbit.android.jobqueue.Job;
 import com.birbit.android.jobqueue.Params;
 import com.birbit.android.jobqueue.RetryConstraint;
-import com.jcraft.jsch.*;
+import com.jcraft.jsch.Channel;
+import com.jcraft.jsch.ChannelSftp;
+import com.jcraft.jsch.HostKey;
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
+import com.jcraft.jsch.SftpException;
 import com.mendhak.gpslogger.common.Strings;
 import com.mendhak.gpslogger.common.events.UploadEvents;
 import com.mendhak.gpslogger.common.slf4j.Logs;
-import de.greenrobot.event.EventBus;
+
 import org.slf4j.Logger;
-import java.io.*;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.Properties;
+
+import de.greenrobot.event.EventBus;
 
 public class SFTPJob extends Job {
     private static final Logger LOG = Logs.of(SFTPJob.class);
