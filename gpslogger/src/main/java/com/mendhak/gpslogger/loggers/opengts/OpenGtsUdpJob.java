@@ -19,8 +19,8 @@
 
 package com.mendhak.gpslogger.loggers.opengts;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.birbit.android.jobqueue.Job;
 import com.birbit.android.jobqueue.Params;
@@ -30,10 +30,14 @@ import com.mendhak.gpslogger.common.Strings;
 import com.mendhak.gpslogger.common.events.UploadEvents;
 import com.mendhak.gpslogger.common.slf4j.Logs;
 import com.mendhak.gpslogger.senders.opengts.OpenGTSManager;
-import de.greenrobot.event.EventBus;
+
 import org.slf4j.Logger;
 
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
+import de.greenrobot.event.EventBus;
 
 
 public class OpenGtsUdpJob extends Job {

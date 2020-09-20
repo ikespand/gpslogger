@@ -20,7 +20,8 @@
 package com.mendhak.gpslogger.senders.googledrive;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.birbit.android.jobqueue.CancelResult;
 import com.birbit.android.jobqueue.JobManager;
@@ -33,12 +34,14 @@ import com.mendhak.gpslogger.common.Strings;
 import com.mendhak.gpslogger.common.events.UploadEvents;
 import com.mendhak.gpslogger.common.slf4j.Logs;
 import com.mendhak.gpslogger.senders.FileSender;
-import de.greenrobot.event.EventBus;
+
 import org.slf4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 
 public class GoogleDriveManager extends FileSender {
